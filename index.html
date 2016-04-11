@@ -12,9 +12,11 @@
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         
-        <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-        
-        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
     
         <style>
           .carousel-inner > .item > img,
@@ -25,6 +27,11 @@
             
             .content{
                 margin-top: 50px;
+            }
+            
+            img.thumbnails{
+                width: 200px;
+                padding: 10px;
             }
             
         </style>
@@ -47,145 +54,69 @@
           </div>
         </nav>
         <div class="container-fluid content">
-        <h1>Welcome to a Public Photo Sharing Service! </h1>
-        <p>At this page, you are seeing all the photos that user has uploaded to this site! Take a scroll! </p>
-            
-        
+            <h1>Welcome to a Public Photo Sharing Service! </h1>
+            <p>At this page, you are seeing all the photos that user has uploaded to this site! Take a scroll! </p>
+
+
+
+
+            <div class="alert alert-warning">
+
+                <strong>Warning!</strong> This website still under construction!
+            </div>
+            <div class="container">
+              <h4>Here are some pictures that has been uploaded by users! </h4>
+
+                <div id="blueimp-gallery" class="blueimp-gallery">
+                    <!-- The container for the modal slides -->
+                    <div class="slides"></div>
+                    <!-- Controls for the borderless lightbox -->
+                    <h3 class="title"></h3>
+                    <a class="prev">‹</a>
+                    <a class="next">›</a>
+                    <a class="close">×</a>
+                    <a class="play-pause"></a>
+                    <ol class="indicator"></ol>
+                    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+                    <div class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title"></h4>
+                                </div>
+                                <div class="modal-body next"></div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left prev">
+                                        <i class="glyphicon glyphicon-chevron-left"></i>
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary next">
+                                        Next
+                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="links">
+                    <script src="js/fetch-images.js"></script>
+                </div>
+
+                <div class="container" padding="5px">
+                    <p></p>
+                    <p>If you have any question or inqueries, feel free to <a href="mailto:wlkr7@mail.missouri.edu">email</a> the author!</p>
+                </div>
+
+            </div>
+
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+            <script src="js/bootstrap-image-gallery.min.js"></script>
 
         
-        <div class="alert alert-warning">
-            
-            <strong>Warning!</strong> This website still under construction!
-        </div>
-        <div class="container">
-          <h4>Here are some pictures that has been uploaded by users! </h4>
-          <div id="myCarousel" class="carousel slide">
-
-              <div id="carousel" class="carousel-inner" role="listbox">
-                    
-                  <script>
-                        
-
-                        //The div element that will contain the images
-                        var imageContainer = document.getElementById("carousel");
-                      
-                      console.log("Executing");
-                        callForImages();
-                      console.log("executed");
-
-
-                        //Makes an asynch request, loading the getimages.php file
-                        function callForImages() {
-
-                            //Create the request object
-                            var httpReq = (window.XMLHttpRequest)?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
-                            
-
-                            //When it loads,
-                            httpReq.onload = function() {
-
-                                //Convert the result back into JSON
-                                var result = JSON.parse(httpReq.responseText);
-                                console.log("calling loadImages()");
-                                console.log(result);
-                                //Show the images
-                                loadImages(result);
-                                console.log("called compleate");
-                            }
-
-                            //Request the page
-                            try {
-                                httpReq.open("GET", "filecheck.php", true);
-                                httpReq.send(null);
-                            } catch(e) {
-                                console.log(e);
-                            }
-
-                        }
-
-
-                        //Generates the images and sticks them in the container
-                        function loadImages(images) {
-                            
-                            
-                            console.log("entering loop");
-                            
-                            //For each image,
-                            for(var i = 0; i < images.length; i++) {
-                                console.log("loop: "+ i);
-                                if(i == 0){
-                                    var divTag = document.createElement("div");
-                                    divTag.setAttribute("class", "item active");
-                                    
-                                    //Make a new image element, setting the source to the source in the array
-                                    var newImage = document.createElement("img");
-                                    newImage.setAttribute("src", images[i]);
-                                    divTag.appendChild(newImage)
-
-                                    //Add it to the container
-                                    imageContainer.appendChild(divTag);
-                                    console.log(images[i] + "First");
-                                    
-
-                                }else{
-
-                                var divTag = document.createElement("div");
-                                    divTag.setAttribute("class", "item");
-                                    //Make a new image element, setting the source to the source in the array
-                                    var newImage = document.createElement("img");
-                                    newImage.setAttribute("src", images[i]);
-                                    divTag.appendChild(newImage)
-
-                                    //Add it to the container
-                                    imageContainer.appendChild(divTag);
-                                    console.log(images[i]);
-                            }
-
-                            }
-
-                        }
-
-            
-                    </script>
-
-
-                    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-        </div>
-        <div class="container" padding="5px">
-            <p
-            <p>If you have any question or inqueries, feel free to <a href="mailto:wlkr7@mail.missouri.edu">email</a> the author!</p>
-        </div>
-        
-        </div>
-    
-    
-
-<script>
-$(document).ready(function(){
-    // Activate Carousel
-    $("#myCarousel").carousel();
-    
-    
-    
-    // Enable Carousel Controls
-    $(".left").click(function(){
-        $("#myCarousel").carousel("prev");
-    });
-    $(".right").click(function(){
-        $("#myCarousel").carousel("next");
-    });
-});
-</script>
     
     </div>
     
