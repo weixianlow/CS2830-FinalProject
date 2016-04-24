@@ -1,7 +1,7 @@
 <!doctype HTML>
 <html>
     <head>
-        <title>Final Project</title>
+        <title>Final Project | About</title>
         
         <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -17,17 +17,30 @@
         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     
         <style>
-            #authorPicture{
-                width: 300px;
-                float: left;
-                margin: 10px;
-            }
+            
             #authorInformation{
                 margin: 10px;
+                
+                
             }
             .content{
                 margin-top: 50px;
             }
+            #video{
+                margin: 0 auto;
+                align-content: center;
+                
+            }
+            
+            #authorPicture{
+                width :300px;
+                
+            }
+            #authorImage{
+                float: left;
+            }
+            
+            
         </style>
         
         
@@ -43,12 +56,15 @@
             <ul class="nav navbar-nav">
               <li><a href="http://wow.centralus.cloudapp.azure.com/finalproject/">Home</a></li>
               <li class="active"><a href="about.html">About Author</a></li>
+                <li><a href="http://wow.centralus.cloudapp.azure.com/finalproject/pages/upload_landing.php">Upload Pictures</a></li>
               
             </ul>
           </div>
         </nav>
         
         <div class="container-fluid content">
+            
+            
             
             <h2>About the Author</h2>
             
@@ -57,16 +73,29 @@
             <strong>Warning!</strong> This website still under construction!
         </div>
             
-            <img id="authorPicture" src="Images/author_picture.jpg">
-            <div id="authorInformation">
+            <div id="authorInformation" class="row">
+                <div id="authorImage" class="container-fluid"><img id="authorPicture"src="./img/author.jpg"></div>
+                
                 <p>Hi! I'm Wei Xian Low! I'm the author of this page! This page is made for the final project requirements for University of Missouri - Columbia's CMP_SC 2830 class. </p>
+                
+                <p>Life is really full of mystery, Learning HTML is just one of them. Looking at millions of website available all around the world is just amazing. So this website is about learning and pushing my limit in learning. </p>
+                
+                
+                
             </div>
+        
+        
+                <div id="video" class="row">
+                    <p>Here's a video by <a href="https://www.youtube.com/channel/UCtinbF-Q-fVthA0qrFQTgXQ">Casey Neistat</a> where I would constantly watch and remind me that you can't just sit and wait for life to happen. You need to run, and chance after life. </p>
+                    <p></p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/L9VBpbnXhWk" frameborder="0" allowfullscreen></iframe>
+                </div>
             
             
             
+        
         </div>
-        
-        
+
     
 </body>
     
