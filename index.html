@@ -61,7 +61,7 @@
         
             
             
-        <div class="container content">
+        <div class="container-fluid content">
             <h1>Welcome to a Public Photo Sharing Service! </h1>
             <p>At this page, you are seeing all the photos that user has uploaded to this site! Take a scroll! </p>
 
@@ -112,12 +112,29 @@
                 <div id="links">
                     <script src="js/fetch-images.js"></script>
                 </div>
-
-                <div class="container" padding="5px">
-                    <p></p>
-                    <p>If you like to upload a photo to our website, <a href="/finalproject/pages/login.php">login</a> now!</p>
-                    <p>If you have any question or inqueries, feel free to <a href="mailto:wlkr7@mail.missouri.edu">email</a> the author!</p>
+                <div class="row">
+                    <div class="col-sm-6" padding="5px">
+                        <div class="container">
+                            <p></p>
+                            <p>If you like to upload a photo to our website, <a href="/finalproject/pages/login.php">login</a> now!</p>
+                            <p>If you have any question or inqueries, feel free to <a href="mailto:wlkr7@mail.missouri.edu">email</a> the author!</p>
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="container">
+                            <h4> Search for image type:</h4>
+                            <p>Type in the search bar below to filter through specific file type!</p>
+                            <p>The search parameter accepts: 'jpg', 'png', 'gif', and 'jpeg'</p>
+                            <form action="" method="get" target="_blank">
+                              <input type="text" name="fileType", placeholder="jpg, jpeg, png, gif">
+                              <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                        
+                    </div>
                 </div>
+                
 
             </div>
 
@@ -128,7 +145,7 @@
         
         </div>
           
-    </div>
+    
         
     
 </body>
