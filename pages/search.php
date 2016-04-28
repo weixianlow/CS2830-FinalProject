@@ -1,9 +1,13 @@
+<?php
+        $file = htmlspecialchars($_get["fileType"]);
+?>
+
 <!doctype HTML>
 <html>
     <head>
-        <title>Final Project</title>
+        <title>Final Project | About</title>
         
-        <!-- Latest compiled and minified CSS -->
+           <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <!-- jQuery library -->
@@ -18,21 +22,41 @@
     <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
     <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
     
+        
+    
         <style>
-          .carousel-inner > .item > img,
-          .carousel-inner > .item > a > img {
-              width: 70%;
-              margin: auto;
-          }
             
+            #authorInformation{
+                margin: 10px;
+                
+                
+            }
             .content{
                 margin-top: 50px;
+            }
+            #video{
+                margin: 0 auto;
+                align-content: center;
+                
+            }
+            
+            #authorPicture{
+                width :300px;
+                
+            }
+            #authorImage{
+                float: left;
+            }
+            
+            .title{
+                text-align: center;
             }
             
             img.thumbnails{
                 width: 200px;
                 padding: 10px;
             }
+            
             
         </style>
         
@@ -42,40 +66,22 @@
     
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
-            
-            
-            
           <div class="container-fluid">
             <div class="navbar-header">
               <a class="navbar-brand" href="#">CS2830 Final Project</a>
             </div>
             <ul class="nav navbar-nav">
-              <li class="active"><a href="http://wow.centralus.cloudapp.azure.com/finalproject/">Home</a></li>
-              <li><a href="pages/about.html">About Author</a></li>
+              <li><a href="http://wow.centralus.cloudapp.azure.com/finalproject/">Home</a></li>
+              <li><a href="about.html">About Author</a></li>
                 <li><a href="http://wow.centralus.cloudapp.azure.com/finalproject/pages/upload_landing.php">Upload Pictures</a></li>
               
             </ul>
           </div>
         </nav>
         
-        
-            
-            
         <div class="container-fluid content">
-            <h1>Welcome to a Public Photo Sharing Service! </h1>
-            <p>At this page, you are seeing all the photos that user has uploaded to this site! Take a scroll! </p>
-
-
-
-
-            <div class="alert alert-warning">
-
-                <strong>Warning!</strong> This website still under construction!
-            </div>
-            <div class="container">
-              <h4>Here are some pictures that has been uploaded by users! </h4>
-
-                <div id="blueimp-gallery" class="blueimp-gallery">
+            
+            <div id="blueimp-gallery" class="blueimp-gallery">
                     <!-- The container for the modal slides -->
                     <div class="slides"></div>
                     <!-- Controls for the borderless lightbox -->
@@ -108,11 +114,41 @@
                         </div>
                     </div>
                 </div>
-
-                <div id="links">
-                    <script src="js/fetch-images.js"></script>
-                </div>
-                <div class="row">
+            
+            
+                    
+           <div class="links">
+            <?php
+            
+                if(htmlspecialchars($_GET["fileType"]) == "jpg" || htmlspecialchars($_GET["fileType"]) == "jpeg" || htmlspecialchars($_GET["fileType"]) == "png" || htmlspecialchars($_GET["fileType"]) == "gif"  )
+                {
+                    echo '<h4 class="title"> Search results for "'. htmlspecialchars($_GET["fileType"]) . '" images. </h4>';
+                    
+                    echo '<div class="alert alert-success">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Success!</strong> Result has been shown below.
+                                </div>';
+                    foreach(glob('Images/*.'.htmlspecialchars($_GET["fileType"]).'') as $filename){
+                        echo "<a href='".$filename."' title='".$filename."' data-gallery><img src='".$filename."' alt='".$filename."' class='thumbnails'></a>";
+                    }
+                    
+                }else{
+                    echo '<h4 class="title"> Search results for "'. htmlspecialchars($_GET["fileType"]) . '" images. </h4>';
+                    echo '<div class="alert alert-danger">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Error!</strong> The search parameter "'. htmlspecialchars($_GET["fileType"]) .'" is not a valid file type. Please try again with a valid file type (eg: png, jpeg, jpg, or gif)
+                                </div>';
+                }
+                    
+                    ?>
+            </div>         
+            
+            
+            
+            
+        
+        </div>
+         <div class="row">
                     <div class="col-sm-6" padding="5px">
                         <div class="container">
                             <p></p>
@@ -126,7 +162,7 @@
                             <h4> Search for image type:</h4>
                             <p>Type in the search bar below to filter through specific file type!</p>
                             <p>The search parameter accepts: 'jpg', 'png', 'gif', and 'jpeg'</p>
-                            <form action="./pages/search.php" method="get" target="_blank">
+                            <form action="./search.php" method="get" target="_blank">
                               <input type="text" name="fileType", placeholder="jpg, jpeg, png, gif">
                               <input type="submit" value="Submit">
                             </form>
@@ -134,19 +170,7 @@
                         
                     </div>
                 </div>
-                
 
-            </div>
-
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-            <script src="js/bootstrap-image-gallery.min.js"></script>
-
-        
-        </div>
-          
-    
-        
     
 </body>
     
