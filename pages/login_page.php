@@ -57,7 +57,7 @@
               <ul class="nav navbar-nav">
               <li><a href="http://wow.centralus.cloudapp.azure.com/finalproject/">Home</a></li>
               <li><a href="about.html">About Author</a></li>
-                <li><a href="http://wow.centralus.cloudapp.azure.com/finalproject/pages/upload_landing.php">Upload Pictures</a></li>
+                <li class="active"><a href="http://wow.centralus.cloudapp.azure.com/finalproject/pages/upload_landing.php">Upload Pictures</a></li>
               
             </ul>
               </div>
@@ -69,10 +69,7 @@
             
             
             
-            <div class="alert alert-warning">
             
-            <strong>Warning!</strong> This website still under construction!
-        </div>
             
             
             
