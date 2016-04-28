@@ -5,7 +5,7 @@
 <!doctype HTML>
 <html>
     <head>
-        <title>Final Project | About</title>
+        <title>Final Project | Search</title>
         
            <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -132,6 +132,11 @@
                         echo "<a href='".$filename."' title='".$filename."' data-gallery><img src='".$filename."' alt='".$filename."' class='thumbnails'></a>";
                     }
                     
+                }else if(htmlspecialchars($_GET["fileType"]) == ""){
+                    echo '<div class="alert alert-info">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Info</strong> Please use the search form below to search through different file type. 
+</div>';
                 }else{
                     echo '<h4 class="title"> Search results for "'. htmlspecialchars($_GET["fileType"]) . '" images. </h4>';
                     echo '<div class="alert alert-danger">

@@ -15,7 +15,7 @@
 <!doctype HTML>
 <html>
     <head>
-        <title>Final Project</title>
+        <title>Final Project | Upload</title>
         
         <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
