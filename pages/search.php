@@ -24,41 +24,7 @@
     
         
     
-        <style>
-            
-            #authorInformation{
-                margin: 10px;
-                
-                
-            }
-            .content{
-                margin-top: 50px;
-            }
-            #video{
-                margin: 0 auto;
-                align-content: center;
-                
-            }
-            
-            #authorPicture{
-                width :300px;
-                
-            }
-            #authorImage{
-                float: left;
-            }
-            
-            .title{
-                text-align: center;
-            }
-            
-            img.thumbnails{
-                width: 200px;
-                padding: 10px;
-            }
-            
-            
-        </style>
+        <link rel="stylesheet" type="text/css" href="/finalproject/style.css">
         
         
     </head>

@@ -32,33 +32,7 @@
         
         <script src="upload_js.js"></script>
     
-        <style>
-            #content{
-                margin-top: 100px;
-            }
-            
-            #uploadView{
-                border: 1px solid black;
-                margin: 20px;
-                padding: 30px;
-                width: 400px;
-                float: left;
-                margin-top:0;
-                
-                
-            }
-            
-            #uploadViewContent{
-                margin: 0 auto;
-                text-align: center;
-            }
-            
-            #loading{
-                display: none;
-            }
-            
-            
-        </style>
+        <link rel="stylesheet" type="text/css" href="/finalproject/style.css">
         
         
     </head>

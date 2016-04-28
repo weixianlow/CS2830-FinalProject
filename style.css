@@ -1,0 +1,51 @@
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+}
+
+.content{
+    margin-top: 50px;
+}
+
+img.thumbnails{
+    width: 200px;
+    padding: 10px;
+}
+
+#authorPicture{
+    width: 300px;
+    float: left;
+    margin: 10px;
+}
+#authorInformation{
+    margin: 10px;
+}
+
+.title{
+    text-align: center;
+}
+
+#uploadView{
+    border: 1px solid black;
+    margin: 20px;
+    padding: 30px;
+    width: 400px;
+    float: left;
+    margin-top:0;
+
+
+}
+
+#uploadViewContent{
+    margin: 0 auto;
+    text-align: center;
+}
+
+#loading{
+    display: none;
+}
+
+.socialMedia{
+
+}

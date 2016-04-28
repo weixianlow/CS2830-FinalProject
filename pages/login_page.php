@@ -22,21 +22,7 @@
         });
     </script>
     
-        <style>
-            #authorPicture{
-                width: 300px;
-                float: left;
-                margin: 10px;
-            }
-            #authorInformation{
-                margin: 10px;
-            }
-            .content{
-                margin-top: 50px;
-            }
-            
-            
-        </style>
+        <link rel="stylesheet" type="text/css" href="/finalproject/style.css">
         
         
     </head>
