@@ -68,14 +68,22 @@
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
               <a class="navbar-brand" href="#">CS2830 Final Project</a>
             </div>
-            <ul class="nav navbar-nav">
+              <div class="collapse navbar-collapse" if="myNavbar">
+              <ul class="nav navbar-nav">
               <li><a href="http://wow.centralus.cloudapp.azure.com/finalproject/">Home</a></li>
               <li><a href="about.html">About Author</a></li>
                 <li><a href="http://wow.centralus.cloudapp.azure.com/finalproject/pages/upload_landing.php">Upload Pictures</a></li>
               
             </ul>
+              </div>
+            
           </div>
         </nav>
         
@@ -167,7 +175,7 @@
                             <h4> Search for image type:</h4>
                             <p>Type in the search bar below to filter through specific file type!</p>
                             <p>The search parameter accepts: 'jpg', 'png', 'gif', and 'jpeg'</p>
-                            <form action="./search.php" method="get" target="_blank">
+                            <form action="./search.php" method="get">
                               <input type="text" name="fileType", placeholder="jpg, jpeg, png, gif">
                               <input type="submit" value="Submit">
                             </form>
