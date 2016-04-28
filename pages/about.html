@@ -26,7 +26,7 @@
             .content{
                 margin-top: 50px;
             }
-            #video{
+            .contentAfter{
                 margin: 0 auto;
                 align-content: center;
                 
@@ -38,6 +38,10 @@
             }
             #authorImage{
                 float: left;
+            }
+            
+            .socialMedia{
+                
             }
             
             
@@ -72,14 +76,10 @@
         
         <div class="container-fluid content">
             
+            <div class="col-sm-8">
+                <h2>About the Author</h2>
             
             
-            <h2>About the Author</h2>
-            
-            <div class="alert alert-warning">
-            
-            <strong>Warning!</strong> This website still under construction!
-        </div>
             
             <div id="authorInformation" class="row">
                 <div id="authorImage" class="container-fluid"><img id="authorPicture"src="./img/author.jpg"></div>
@@ -90,14 +90,42 @@
                 
                 
                 
+                
+                
             </div>
-        
-        
-                <div id="video" class="row">
-                    <p>Here's a video by <a href="https://www.youtube.com/channel/UCtinbF-Q-fVthA0qrFQTgXQ">Casey Neistat</a> where I would constantly watch and remind me that you can't just sit and wait for life to happen. You need to run, and chance after life. </p>
-                    <p></p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/L9VBpbnXhWk" frameborder="0" allowfullscreen></iframe>
+                <div class="row contentAfter">
+                        <h4>Resourses Used to build this website:</h4>
+                    <ul>
+                        <li><a href="https://blueimp.github.io/Bootstrap-Image-Gallery/" target="_blank">Bluimp Bootstrap Photo Gallery</a></li>
+                        <li>UI Design with <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+                        <li>UI Design with <a href="http://jqueryui.com/" target="_blank">jQuery UI</a></li>
+                        <li><a href="http://php.net/" target="_blank">pHp</a></li>
+                        <li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+                        <li><a href="https://www.javascript.com/" target="_blank">Javascript</a></li>
+                        <li><a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank">CSS</a></li>
+                        <li><a href="https://www.w3.org/html/" target="_blank">HTML</a></li>
+                    </ul>
                 </div>
+        
+                <div  class="row contentAfter">
+                    <p>Here's a video by <a href="https://www.youtube.com/channel/UCtinbF-Q-fVthA0qrFQTgXQ">Casey Neistat</a> where I would constantly watch and remind myself that you can't just sit and wait for life to happen. You need to run, and chase after life. </p>
+                    <p></p>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-8">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/L9VBpbnXhWk" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    
+                </div>
+            </div>
+            
+            
+            <div class="col-sm-4 socialMedia">
+                <h2>My Twitter</h2>
+                    <a class="twitter-timeline" href="https://twitter.com/NickLowWeiXian" data-widget-id="725556098539786240">Tweets by @NickLowWeiXian</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+            </div>
             
             
             
