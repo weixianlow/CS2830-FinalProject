@@ -49,7 +49,7 @@
       </button>
               <a class="navbar-brand" href="#">CS2830 Final Project</a>
             </div>
-              <div class="collapse navbar-collapse" if="myNavbar">
+              <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
               <li><a href="http://wow.centralus.cloudapp.azure.com/finalproject/">Home</a></li>
               <li><a href="about.html">About Author</a></li>
